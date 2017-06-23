@@ -5,9 +5,10 @@
   "private": true,
   "description": "people bachelor example",
   "scripts": {
-    "build-web": "cd italent-webapp/ && npm run clean-dist && npm run build-aot",
-    "postinstall": "cd italent-webapp/ && npm install && cd .. && cd italent-cordova/ && npm install",
-    "delete-all-node-modules": "cd italent-cordova/ && rm -rf node_modules && cd .. && cd italent-webapp/ && rm -rf node_modules"
+    "ios": "cd people-cordova/ && npm run ios",
+    "build-web": "cd people-webapp/ && npm run clean-dist && npm run build-aot",
+    "postinstall": "cd people-webapp/ && npm install && cd .. && cd people-cordova/ && npm install",
+    "delete-all-node-modules": "cd people-cordova/ && rm -rf node_modules && cd .. && cd people-webapp/ && rm -rf node_modules"
   },
   "keywords": [],
   "license": "private",

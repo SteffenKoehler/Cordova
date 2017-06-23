@@ -4,12 +4,11 @@
   "license": "MIT",
   "scripts": {
     "inject-cordova": "node scripts/inject-cordova.js",
-    "copy-dist": "rm -rf www && mkdir www && cp -r ../italent-webapp/dist/* www && npm run inject-cordova",
-    "ios": "cd .. && npm run build-web && cd italent-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova run ios",
-    "ios-build": "cd .. && npm run build-web && cd italent-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova prepare ios",
-    "android": "cd .. && npm run build-web && cd italent-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova run android",
-    "android-build": "cd .. && npm run build-web && cd italent-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova prepare android"
-
+    "copy-dist": "rm -rf www && mkdir www && cp -r ../people-webapp/dist/* www && npm run inject-cordova",
+    "ios": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova run ios",
+    "ios-build": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova prepare ios",
+    "android": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova run android",
+    "android-build": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova prepare android"
   },
   "private": true,
   "dependencies": {
