@@ -6,6 +6,7 @@
   "description": "people bachelor example",
   "scripts": {
     "ios": "cd people-cordova/ && npm run ios",
+    "ios-build": "cd people-cordova && npm run ios-build",
     "build-web": "cd people-webapp/ && npm run clean-dist && npm run build-aot",
     "postinstall": "cd people-webapp/ && npm install && cd .. && cd people-cordova/ && npm install",
     "delete-all-node-modules": "cd people-cordova/ && rm -rf node_modules && cd .. && cd people-webapp/ && rm -rf node_modules"
