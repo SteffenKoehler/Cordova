@@ -1,0 +1,20 @@
+{
+  "name": "people",
+  "version": "1.0.0",
+  "author": "Steffen Köhler",
+  "private": true,
+  "description": "people bachelor example",
+  "scripts": {
+    "build-web": "cd italent-webapp/ && npm run clean-dist && npm run build-aot",
+    "postinstall": "cd italent-webapp/ && npm install && cd .. && cd italent-cordova/ && npm install",
+    "delete-all-node-modules": "cd italent-cordova/ && rm -rf node_modules && cd .. && cd italent-webapp/ && rm -rf node_modules"
+  },
+  "keywords": [],
+  "license": "private",
+  "dependencies": {
+    "@ngx-translate/http-loader": "0.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "2.1.0"
+  }
+}
