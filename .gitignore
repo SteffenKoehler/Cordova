@@ -1,3 +1,7 @@
 node_modules
 www
 .idea
+
+people-cordova/platforms
+people-cordova/plugins
+people-cordova/www
