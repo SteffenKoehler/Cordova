@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ActionBarComponent } from './components/action-bar/action-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
+import { ListViewComponent } from './components/content/list-view/list-view.component';
 
 
 
@@ -13,7 +14,8 @@ import { ContentComponent } from './components/content/content.component';
     AppComponent,
     ActionBarComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    ListViewComponent
   ],
   imports: [
     BrowserModule

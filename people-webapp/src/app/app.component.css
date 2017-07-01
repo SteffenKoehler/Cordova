@@ -10,11 +10,9 @@ app-action-bar {
 }
 
 app-content {
-
   flex: 1 1 auto;
   /*flex: 1 0 auto; use this to implement sticky footer*/
   overflow-y: scroll;
-  padding: 1rem;
   -webkit-overflow-scrolling: touch;
   background-color: beige;
 }
