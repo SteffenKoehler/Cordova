@@ -5,8 +5,9 @@
 }
 
 app-action-bar {
-  padding: 1rem;
-  background-color: aliceblue;
+    padding: 1rem;
+    background-color: #DDE8F4;
+    border-bottom: 1px solid lightgray;
 }
 
 app-content {
@@ -14,10 +15,10 @@ app-content {
   /*flex: 1 0 auto; use this to implement sticky footer*/
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  background-color: beige;
 }
 
 app-footer {
-  padding: 1rem;
-  background-color: springgreen;
+    border-top: 1px solid lightgray;
+    padding: 1rem;
+    background-color: #DDE8F4;
 }

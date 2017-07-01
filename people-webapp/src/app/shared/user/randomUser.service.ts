@@ -12,10 +12,7 @@ import {Randomuser} from './randomUser';
 @Injectable()
 export class RandomuserService {
   constructor(private http: Http) {}
-
   numberOfResults: number = 50;
-
-
 
   getUsers(nationalitie) {
     let headers = new Headers();

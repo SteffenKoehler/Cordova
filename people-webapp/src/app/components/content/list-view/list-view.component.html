@@ -1,3 +1,21 @@
-<p>
-  list-view works!
-</p>
+<div class="list-container"  *ngFor="let user of randomUserList">
+    <div>
+        <img [src]="user.picture.thumbnail">
+    </div>
+
+    <div class="user-details">
+        <div class="user-name">
+            <div>
+                {{user.name.first}}
+            </div>
+
+            <div>
+                {{user.name.last}}
+            </div>
+        </div>
+
+        <div class="user-city">
+            {{user.location.city}}
+        </div>
+    </div>
+</div>
