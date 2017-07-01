@@ -19,7 +19,8 @@
 
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarBackgroundColor" value="#DDE8F4" />
+    <preference name="StatusBarStyle" value="default" />
 
     <platform name="android">
         <allow-intent href="market:*" />
