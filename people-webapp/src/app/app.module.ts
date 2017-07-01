@@ -2,12 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './components/test/test.component';
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContentComponent } from './components/content/content.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    ActionBarComponent,
+    FooterComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule
@@ -15,4 +21,4 @@ import { TestComponent } from './components/test/test.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
