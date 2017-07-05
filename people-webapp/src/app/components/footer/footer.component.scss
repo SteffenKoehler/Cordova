@@ -1,0 +1,13 @@
+.footer-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+    div {
+        padding: 5px;
+
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+}

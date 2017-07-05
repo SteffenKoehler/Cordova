@@ -5,7 +5,7 @@
 }
 
 app-action-bar {
-    padding: 1rem;
+    height: 60vh;
     background-color: #DDE8F4;
     border-bottom: 1px solid lightgray;
 }
@@ -18,7 +18,7 @@ app-content {
 }
 
 app-footer {
+    height: 60vh;
     border-top: 1px solid lightgray;
-    padding: 1rem;
     background-color: #DDE8F4;
 }
