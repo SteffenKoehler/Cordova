@@ -12,35 +12,34 @@ import { RandomuserService } from '../../../shared/user/randomUser.service';
   providers: [RandomuserService]
 })
 export class ListViewComponent implements OnInit {
-  isLoading: boolean;
-  listLoaded: boolean;
-  randomUserList: Array<Randomuser> = [];
+    isLoading: boolean;
+    listLoaded: boolean;
+    randomUserList: Array<Randomuser>;
 
-  constructor(
+    constructor(
     private randomUserService: RandomuserService
-  ) {}
+    ) {}
 
-  ngOnInit() {
-    this.getUserList();
-  }
+    ngOnInit() {
+        this.getUserList();
+    }
 
-
-  getUserList () {
+    getUserList () {
     this.isLoading = true;
     this.listLoaded = false;
     this.randomUserList = [];
 
     this.randomUserService.getUsers('de')
-      .subscribe(loadedRandomusers => {
-        loadedRandomusers.forEach((randomUser) => {
-          this.randomUserList.push(randomUser);
+        .subscribe(loadedRandomusers => {
+            loadedRandomusers.forEach((randomUser) => {
+                this.randomUserList.push(randomUser);
 
-          if(randomUser.favorite){
+                if (randomUser.favorite) {
 
-          }
-        });
-        this.isLoading = false;
-        this.listLoaded = true;
+                }
+            });
+            this.isLoading = false;
+            this.listLoaded = true;
       });
-  }
+    }
 }
