@@ -9,6 +9,7 @@ import { ContentComponent } from './components/content/content.component';
 import { ListViewComponent } from './components/content/list-view/list-view.component';
 import { MapComponent } from './components/content/map/map.component';
 import {NavigationService} from './shared/navigation/navigation.service';
+import { SettingsComponent } from './components/content/settings/settings.component';
 
 
 
@@ -19,7 +20,8 @@ import {NavigationService} from './shared/navigation/navigation.service';
     FooterComponent,
     ContentComponent,
     ListViewComponent,
-    MapComponent
+    MapComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
