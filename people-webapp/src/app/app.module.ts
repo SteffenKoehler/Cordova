@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
 import { ListViewComponent } from './components/content/list-view/list-view.component';
 import { MapComponent } from './components/content/map/map.component';
+import {NavigationService} from './shared/navigation/navigation.service';
 
 
 
@@ -24,7 +25,7 @@ import { MapComponent } from './components/content/map/map.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
