@@ -14,10 +14,10 @@ export class ContentComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.getSelectedNav();
+        this.getSelectedNavigation();
     }
 
-    getSelectedNav () {
+    getSelectedNavigation () {
         this.subscription = this._navigationService.navItem
             .subscribe(
                 item => this.selectedView = item,
