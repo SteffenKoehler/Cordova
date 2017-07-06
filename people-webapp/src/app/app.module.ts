@@ -10,6 +10,7 @@ import { ListViewComponent } from './components/content/list-view/list-view.comp
 import { MapComponent } from './components/content/map/map.component';
 import {NavigationService} from './shared/navigation/navigation.service';
 import { SettingsComponent } from './components/content/settings/settings.component';
+import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
 
 
 
@@ -21,7 +22,8 @@ import { SettingsComponent } from './components/content/settings/settings.compon
     ContentComponent,
     ListViewComponent,
     MapComponent,
-    SettingsComponent
+    SettingsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
