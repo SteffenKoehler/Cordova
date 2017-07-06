@@ -9,7 +9,7 @@ app-action-bar {
     border-bottom: 1px solid lightgray;
 }
 
-router-outlet {
+app-content {
   flex: 1 1 auto;
   /*flex: 1 0 auto; use this to implement sticky footer*/
   overflow-y: scroll;

@@ -4,13 +4,13 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListViewComponent } from './components/content/list-view/list-view.component';
 import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
+import { ContentComponent } from './components/content/content.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/listView', pathMatch: 'full' },
-    { path: 'listView',  component: ListViewComponent },
+    { path: '', redirectTo: '/content', pathMatch: 'full' },
+    { path: 'content',  component: ContentComponent },
     { path: 'userDetails', component: UserDetailsComponent }
 ];
 
