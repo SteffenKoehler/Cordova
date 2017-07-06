@@ -14,7 +14,8 @@
   "keywords": [],
   "license": "private",
   "dependencies": {
-    "@ngx-translate/http-loader": "0.0.3"
+    "@ngx-translate/http-loader": "0.0.3",
+    "angular-fastclick": "^1.0.4"
   },
   "devDependencies": {
     "concurrently": "2.1.0"
