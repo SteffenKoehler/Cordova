@@ -9,12 +9,12 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   title = 'app';
-  route: string;
+  currentRoute: string;
 
   constructor (
       private location: Location, private router: Router) {
       router.events.subscribe((val) => {
-          this.route = location.path();
+          this.currentRoute = location.path();
       });
   }
 }

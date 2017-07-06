@@ -1,5 +1,13 @@
 <div class="action-bar-wrapper">
-    <h2 *ngIf="selectedView === 1">Karte</h2>
-    <h2 *ngIf="selectedView === 2">Liste</h2>
-    <h2 *ngIf="selectedView === 3">Einstellungen</h2>
+    <div class="back-button" (click)="backClicked()">
+        <img *ngIf="currentRoute === '/userDetails'" src="./assets/images/back-button.svg">
+    </div>
+
+    <div class="title" >
+        <h2 *ngIf="selectedView === 1">Karte</h2>
+        <h2 *ngIf="selectedView === 2">Kontakte</h2>
+        <h2 *ngIf="selectedView === 3">Einstellungen</h2>
+    </div>
+
+    <div class="empty"></div>
 </div>

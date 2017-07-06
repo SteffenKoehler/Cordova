@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
-import {NavigationService} from '../../shared/navigation/navigation.service';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { NavigationService } from '../../shared/navigation/navigation.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -9,11 +10,13 @@ import {NavigationService} from '../../shared/navigation/navigation.service';
   styleUrls: ['./action-bar.component.scss']
 })
 export class ActionBarComponent implements OnInit, OnDestroy {
+    @Input() currentRoute: string;
     selectedView: number;
     subscription: Subscription;
 
     constructor(
-      private navigationService: NavigationService
+      private navigationService: NavigationService,
+      private location: Location
     ) { }
 
     ngOnInit() {
@@ -33,4 +36,9 @@ export class ActionBarComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
+    backClicked() {
+        if (this.currentRoute === '/userDetails') {
+            this.location.back();
+        }
+    }
 }
