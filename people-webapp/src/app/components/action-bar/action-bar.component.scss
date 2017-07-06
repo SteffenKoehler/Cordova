@@ -1,9 +1,10 @@
 :host {
     flex: 0 0 auto;
+    background-color: #DDE8F4;
+    border-bottom: 1px solid lightgray;
 }
 
 .action-bar-wrapper {
     display: flex;
-    align-items: center;
-    background-color: red;
+    justify-content: center;
 }
