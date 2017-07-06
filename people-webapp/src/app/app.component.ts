@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  route: string;
+
+  constructor (
+      private location: Location, private router: Router) {
+      router.events.subscribe((val) => {
+          this.route = location.path();
+      });
+  }
 }
