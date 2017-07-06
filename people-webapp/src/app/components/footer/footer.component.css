@@ -1,0 +1,10 @@
+.footer-wrapper {
+  display: flex;
+  justify-content: space-around; }
+  .footer-wrapper div {
+    padding: 5px; }
+    .footer-wrapper div img {
+      height: 40px;
+      width: 40px; }
+
+/*# sourceMappingURL=footer.component.css.map */
