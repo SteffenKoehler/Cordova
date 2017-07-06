@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../shared/navigation/navigation.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'app-footer',
@@ -11,10 +12,15 @@ export class FooterComponent implements OnInit {
     srcMapIcon: string;
     srcListIcon: string;
     srcSettingsIcon: string;
+    subscription: Subscription;
     constructor(private _navigationService: NavigationService) { }
 
     ngOnInit() {
-        this.selectedView = 1;
+        this.subscription = this._navigationService.navItem
+            .subscribe(
+                item => this.selectedView = item,
+                error => console.log('Subscription error', error)
+            );
         this.setSrcForIcons();
     }
 

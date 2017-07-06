@@ -38,6 +38,7 @@ export class ActionBarComponent implements OnInit, OnDestroy {
 
     backClicked() {
         if (this.currentRoute === '/userDetails') {
+            this.navigationService.changeNav(2);
             this.location.back();
         }
     }
