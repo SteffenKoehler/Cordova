@@ -5,3 +5,5 @@ www
 people-cordova/platforms
 people-cordova/plugins
 people-cordova/www
+*.css
+*.map
