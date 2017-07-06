@@ -1,4 +1,4 @@
-<div class="list-container"  *ngFor="let user of randomUserList">
+<div class="list-container"  *ngFor="let user of randomUserList" (click)="goToUserDetails($event)">
     <div>
         <img [src]="user.picture.large">
     </div>
