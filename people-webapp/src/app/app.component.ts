@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import * as FastClick from 'fastclick';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,7 @@ export class AppComponent {
       router.events.subscribe((val) => {
           this.currentRoute = location.path();
       });
+
+      FastClick.attach(document.body);
   }
 }
