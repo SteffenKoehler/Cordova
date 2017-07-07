@@ -21,17 +21,38 @@
 
     <div class="body">
         <div>
-            adresse
+            <div>
+                <img src="./assets/images/map2.svg">
+            </div>
+
+            <div>
+                <span>{{user.location.street}}, {{user.location.postcode}} {{user.location.city}}</span>
+            </div>
         </div>
+
+        <hr>
 
         <div>
-            telefon
+            <div>
+                <img src="./assets/images/phone.svg">
+            </div>
+
+            <div>
+                <span>{{user.cell}}</span>
+            </div>
         </div>
+
+        <hr>
 
         <div>
-            email
-        </div>
+            <div>
+                <img src="./assets/images/world.svg">
+            </div>
 
+            <div>
+                <span>{{user.email}}</span>
+            </div>
+        </div>
     </div>
 
 
