@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserData } from '../../../../providers/userData/userData';
+import { Randomuser } from '../../../../shared/user/randomUser';
 
 @Component({
   selector: 'app-user-details',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
+    user: Randomuser;
 
-  constructor() { }
+    constructor(
+      private userStorage: UserData
+    ) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.user = this.userStorage.storage;
+    }
 
 }
