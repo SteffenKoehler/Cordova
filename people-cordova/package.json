@@ -5,7 +5,7 @@
   "scripts": {
     "inject-cordova": "node scripts/inject-cordova.js",
     "copy-dist": "rm -rf www && mkdir www && cp -r ../people-webapp/dist/* www && npm run inject-cordova",
-    "ios": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova run ios",
+    "ios": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add https://github.com/apache/cordova-ios.git#4.4.0-ios-sim && cordova run ios --emulator --target=\"iPhone-7\"",
     "ios-build": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm ios && cordova platform add ios && cordova prepare ios",
     "android": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova emulate android",
     "android-build": "cd .. && npm run build-web && cd people-cordova/ && npm run copy-dist && cordova platform rm android && cordova platform add android && cordova prepare android"
