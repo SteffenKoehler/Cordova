@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Randomuser } from '../../../shared/user/randomUser';
 import { RandomuserService } from '../../../shared/user/randomUser.service';
 import { Router } from '@angular/router';
+import { UserData } from '../../../providers/userData/userData';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class ListViewComponent implements OnInit {
 
     constructor(
     private randomUserService: RandomuserService,
-    private router: Router
+    private router: Router,
+    private userStorage: UserData
     ) {}
 
     ngOnInit() {
@@ -45,7 +47,8 @@ export class ListViewComponent implements OnInit {
       });
     }
 
-    goToUserDetails (event): void {
+    goToUserDetails (index): void {
+        this.userStorage.storage = this.randomUserList[index];
         this.router.navigate(['userDetails']);
     }
 }

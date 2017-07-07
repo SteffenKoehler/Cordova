@@ -13,6 +13,7 @@ import { NavigationService } from './shared/navigation/navigation.service';
 import { SettingsComponent } from './components/content/settings/settings.component';
 import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { UserData } from './providers/userData/userData';
 
 
 
@@ -35,7 +36,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   ],
   providers: [
       { provide: LocationStrategy, useClass: HashLocationStrategy },
-      NavigationService
+      NavigationService,
+      UserData
   ],
   bootstrap: [AppComponent]
 })
