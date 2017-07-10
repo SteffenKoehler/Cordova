@@ -25,11 +25,11 @@
 
 <div class="favorite-list-container">
     <div class="headline">
-        Favoriten
+        Favoriten ({{favoriteUserList.length}})
     </div>
 
     <div class="favorite-user-container">
-        <div class="favorite-user" *ngFor="let favorite of favoriteUserList; let idx = index">
+        <div class="favorite-user" *ngFor="let favorite of favoriteUserList; let idx = index" (click)="onFavUserClick(idx)">
             <img [src]="favorite.picture.large" />
 
             <span>{{favorite.name.first}}</span>

@@ -53,6 +53,11 @@ export class ListViewComponent implements OnInit {
         this.router.navigate(['userDetails']);
     }
 
+    onFavUserClick (index): void {
+        this.userStorage.storage = this.favoriteUserList[index];
+        this.router.navigate(['userDetails']);
+    }
+
     onUserHeartClicked (event, index): void {
         event.stopPropagation();
 
