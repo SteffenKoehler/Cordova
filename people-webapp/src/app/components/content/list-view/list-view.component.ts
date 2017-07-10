@@ -16,7 +16,7 @@ import { UserData } from '../../../providers/userData/userData';
 export class ListViewComponent implements OnInit {
     isLoading: boolean;
     listLoaded: boolean;
-    randomUserList: Array<Randomuser>;
+    randomUserList: Array<Randomuser> = [];
 
     constructor(
     private randomUserService: RandomuserService,
@@ -29,22 +29,22 @@ export class ListViewComponent implements OnInit {
     }
 
     getUserList () {
-    this.isLoading = true;
-    this.listLoaded = false;
-    this.randomUserList = [];
+        this.isLoading = true;
+        this.listLoaded = false;
+        this.randomUserList = [];
 
-    this.randomUserService.getUsers('de')
-        .subscribe(loadedRandomusers => {
-            loadedRandomusers.forEach((randomUser) => {
-                this.randomUserList.push(randomUser);
+        this.randomUserService.getUsers('de')
+            .subscribe(loadedRandomusers => {
+                loadedRandomusers.forEach((randomUser) => {
+                    this.randomUserList.push(randomUser);
 
-                if (randomUser.favorite) {
+                    if (randomUser.favorite) {
 
-                }
-            });
-            this.isLoading = false;
-            this.listLoaded = true;
-      });
+                    }
+                });
+                this.isLoading = false;
+                this.listLoaded = true;
+          });
     }
 
     goToUserDetails (index): void {
