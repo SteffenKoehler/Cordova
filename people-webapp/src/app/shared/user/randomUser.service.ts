@@ -11,51 +11,52 @@ import {Randomuser} from './randomUser';
 
 @Injectable()
 export class RandomuserService {
-  constructor(private http: Http) {}
-  numberOfResults: number = 50;
+    numberOfResults: number = 50;
+    randomUserList: any = [];
 
-  getUsers(nationalitie) {
-    let headers = new Headers();
-    let url = 'https://randomuser.me/api/';
+    constructor(private http: Http) {}
 
-    url = url + '?results=' + this.numberOfResults + '&nat=' + nationalitie;
+    getUsers(nationalitie) {
+        const headers = new Headers();
+        let url = 'https://randomuser.me/api/';
 
+        url = url + '?results=' + this.numberOfResults + '&nat=' + nationalitie;
 
-    return this.http.get(url, {
-    })
-      .map(res => res.json())
-      .map(data => {
-        let randomUserList = [];
-        data.results.forEach((randomUser) => {
-          let name = {
-            first : randomUser.name.first,
-            last: randomUser.name.last
-          };
+        return this.http.get(url, {
+        })
+          .map(res => res.json())
+          .map(data => {
+            this.randomUserList = [];
+            data.results.forEach((randomUser) => {
+              const name = {
+                first : randomUser.name.first,
+                last: randomUser.name.last
+              };
 
-          let picture = {
-            large: randomUser.picture.large,
-            medium: randomUser.picture.medium,
-            thumbnail: randomUser.picture.thumbnail
-          };
+              const picture = {
+                large: randomUser.picture.large,
+                medium: randomUser.picture.medium,
+                thumbnail: randomUser.picture.thumbnail
+              };
 
-          let location = {
-            street: randomUser.location.street,
-            city: randomUser.location.city,
-            state: randomUser.location.state,
-            postcode: randomUser.location.postcode
-          };
+              const location = {
+                street: randomUser.location.street,
+                city: randomUser.location.city,
+                state: randomUser.location.state,
+                postcode: randomUser.location.postcode
+              };
 
-          let favorite = location.city.length > 8;
+              const favorite = location.city.length > 8;
 
-          randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell, favorite));
-        });
-        return randomUserList;
-      })
-      .catch(this.handleErrors);
-  }
+              this.randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell, favorite));
+            });
+            return this.randomUserList;
+          })
+          .catch(this.handleErrors);
+        }
 
-  handleErrors(error: Response) {
+    handleErrors(error: Response) {
     console.log(JSON.stringify(error.json()));
     return Observable.throw(error);
-  }
+    }
 }
