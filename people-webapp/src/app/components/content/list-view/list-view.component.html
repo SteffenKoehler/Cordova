@@ -1,6 +1,6 @@
 <div class="list-container"  *ngFor="let user of randomUserList, let idx = index" (click)="goToUserDetails(idx)">
-    <div>
-        <img [src]="user.picture.large">
+    <div class="user-thumbnail">
+        <img [src]="user.picture.large" />
     </div>
 
     <div class="user-details">
@@ -17,5 +17,9 @@
         <div class="user-city">
             {{user.location.city}}
         </div>
+    </div>
+
+    <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
+        <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
     </div>
 </div>

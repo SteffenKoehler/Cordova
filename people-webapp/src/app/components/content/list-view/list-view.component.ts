@@ -17,6 +17,7 @@ export class ListViewComponent implements OnInit {
     isLoading: boolean;
     listLoaded: boolean;
     randomUserList: Array<Randomuser> = [];
+    favoriteUserList: Array<Randomuser> = [];
 
     constructor(
     private randomUserService: RandomuserService,
@@ -39,7 +40,7 @@ export class ListViewComponent implements OnInit {
                     this.randomUserList.push(randomUser);
 
                     if (randomUser.favorite) {
-
+                        this.favoriteUserList.push(randomUser);
                     }
                 });
                 this.isLoading = false;
@@ -50,5 +51,10 @@ export class ListViewComponent implements OnInit {
     goToUserDetails (index): void {
         this.userStorage.storage = this.randomUserList[index];
         this.router.navigate(['userDetails']);
+    }
+
+    onUserHeartClicked (event, index): void {
+        event.stopPropagation();
+        this.randomUserList[index].favorite = !this.randomUserList[index].favorite;
     }
 }

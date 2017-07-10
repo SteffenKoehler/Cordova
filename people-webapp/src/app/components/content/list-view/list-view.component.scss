@@ -6,14 +6,17 @@
     display: flex;
     border-bottom: 1px solid #DDE8F4;
 
-    img {
-        width: 15vw;
-        height: 15vw;
-        border-radius: 45vw;
-        padding: 10px;
+    .user-thumbnail {
+        img {
+            width: 15vw;
+            height: 15vw;
+            border-radius: 45vw;
+            padding: 10px;
+        }
     }
 
     .user-details {
+        flex: 1;
         margin-left: 10px;
         flex-direction: column;
         text-transform: capitalize;
@@ -30,6 +33,14 @@
 
         .user-city {
             font-size: 0.9em;
+        }
+    }
+
+    .user-favorite {
+        padding: 10px;
+
+        img {
+            width: 8vw;
         }
     }
 }
