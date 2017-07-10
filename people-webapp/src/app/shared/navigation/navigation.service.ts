@@ -8,7 +8,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 @Injectable()
 export class NavigationService {
     // Observable navItem source
-    private _navItemSource = new BehaviorSubject<number>(1);
+    private _navItemSource = new BehaviorSubject<number>(2);
     // Observable navItem stream
     navItem = this._navItemSource.asObservable();
     // service command
