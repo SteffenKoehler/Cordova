@@ -14,12 +14,9 @@
             </div>
         </div>
 
-        <div class="user-city">
-            {{user.location.city}}
+        <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
+            <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
         </div>
     </div>
-
-    <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
-        <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
-    </div>
 </div>
+
