@@ -1,5 +1,6 @@
 .main-list {
     overflow-y: scroll;
+    margin-bottom: 22vh;
 
     .list-container {
         margin-left: 2vw;
@@ -57,8 +58,9 @@
     flex-direction: column;
     height: 22vh;
     background-color: white;
-    position: sticky;
-    bottom: 0;
+    position: fixed;
+    bottom: 10vh;
+    width: 100vw;
 
     .headline {
         background-color: rgb(239, 239, 244);
