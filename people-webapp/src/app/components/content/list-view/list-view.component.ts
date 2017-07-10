@@ -5,6 +5,8 @@ import { Randomuser } from '../../../shared/user/randomUser';
 import { RandomuserService } from '../../../shared/user/randomUser.service';
 import { Router } from '@angular/router';
 import { UserData } from '../../../providers/userData/userData';
+import { RandomUserListData } from '../../../providers/randomUserListData/randomUserListData';
+import { forEach } from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -22,7 +24,8 @@ export class ListViewComponent implements OnInit {
     constructor(
     private randomUserService: RandomuserService,
     private router: Router,
-    private userStorage: UserData
+    private userStorage: UserData,
+    private randomUserListStorage: RandomUserListData,
     ) {}
 
     ngOnInit() {
@@ -30,22 +33,35 @@ export class ListViewComponent implements OnInit {
     }
 
     getUserList () {
-        this.isLoading = true;
-        this.listLoaded = false;
         this.randomUserList = [];
+        this.favoriteUserList = [];
 
-        this.randomUserService.getUsers('de')
-            .subscribe(loadedRandomusers => {
-                loadedRandomusers.forEach((randomUser) => {
-                    this.randomUserList.push(randomUser);
+        if (this.randomUserListStorage.storage && this.randomUserListStorage.storage.length > 0) {
+            const list = this.randomUserListStorage.storage;
+            list.forEach((randomUser) => {
+                this.fillArrays(randomUser);
+            })
+        } else {
+            this.isLoading = true;
+            this.listLoaded = false;
 
-                    if (randomUser.favorite) {
-                        this.favoriteUserList.push(randomUser);
-                    }
+            this.randomUserService.getUsers('de')
+                .subscribe(loadedRandomusers => {
+                    loadedRandomusers.forEach((randomUser) => {
+                        this.fillArrays(randomUser);
+                    });
+                    this.isLoading = false;
+                    this.listLoaded = true;
                 });
-                this.isLoading = false;
-                this.listLoaded = true;
-          });
+        }
+    }
+
+    fillArrays (randomUser): void {
+        this.randomUserList.push(randomUser);
+
+        if (randomUser.favorite) {
+            this.favoriteUserList.push(randomUser);
+        }
     }
 
     goToUserDetails (index): void {

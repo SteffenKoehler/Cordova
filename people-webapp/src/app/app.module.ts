@@ -14,6 +14,7 @@ import { SettingsComponent } from './components/content/settings/settings.compon
 import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserData } from './providers/userData/userData';
+import { RandomUserListData } from './providers/randomUserListData/randomUserListData';
 
 
 
@@ -37,7 +38,8 @@ import { UserData } from './providers/userData/userData';
   providers: [
       { provide: LocationStrategy, useClass: HashLocationStrategy },
       NavigationService,
-      UserData
+      UserData,
+      RandomUserListData
   ],
   bootstrap: [AppComponent]
 })

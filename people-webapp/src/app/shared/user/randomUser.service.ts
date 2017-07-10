@@ -7,6 +7,7 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {Randomuser} from './randomUser';
+import { RandomUserListData } from '../../providers/randomUserListData/randomUserListData';
 
 
 @Injectable()
@@ -14,7 +15,10 @@ export class RandomuserService {
     numberOfResults: number = 50;
     randomUserList: any = [];
 
-    constructor(private http: Http) {}
+    constructor(
+        private http: Http,
+        private randomUserListStorage: RandomUserListData
+    ) {}
 
     getUsers(nationalitie) {
         const headers = new Headers();
@@ -50,6 +54,7 @@ export class RandomuserService {
 
               this.randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell, favorite));
             });
+            this.randomUserListStorage.storage = this.randomUserList;
             return this.randomUserList;
           })
           .catch(this.handleErrors);
