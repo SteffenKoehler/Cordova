@@ -55,6 +55,19 @@ export class ListViewComponent implements OnInit {
 
     onUserHeartClicked (event, index): void {
         event.stopPropagation();
-        this.randomUserList[index].favorite = !this.randomUserList[index].favorite;
+
+        const user = this.randomUserList[index];
+
+        if (!user.favorite) {
+            this.favoriteUserList.unshift(user);
+            user.favorite = true;
+        } else {
+            const favIndex = this.favoriteUserList.indexOf(user);
+
+            if (favIndex > -1) {
+                this.favoriteUserList.splice(favIndex, 1);
+                user.favorite = false;
+            }
+        }
     }
 }
