@@ -1,46 +1,96 @@
-.list-container {
-    margin-left: 2vw;
-    margin-right: 2vw;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    border-bottom: 1px solid #DDE8F4;
+.main-list {
+    overflow-y: scroll;
 
-    .user-thumbnail {
-        img {
-            width: 15vw;
-            height: 15vw;
-            border-radius: 45vw;
-            padding: 10px;
-        }
-    }
+    .list-container {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid #DDE8F4;
 
-    .user-details {
-        flex: 1;
-        margin-left: 10px;
-        flex-direction: column;
-        text-transform: capitalize;
-
-        .user-name {
-            display: flex;
-            flex-direction: row;
-            font-size: 1.2em;
-
-            > div {
-                padding-right: 10px;
+        .user-thumbnail {
+            img {
+                width: 15vw;
+                height: 15vw;
+                border-radius: 45vw;
+                padding: 10px;
             }
         }
 
-        .user-city {
-            font-size: 0.9em;
+        .user-details {
+            flex: 1;
+            margin-left: 10px;
+            flex-direction: column;
+            text-transform: capitalize;
+
+            .user-name {
+                display: flex;
+                flex-direction: row;
+                font-size: 1.2em;
+
+                > div {
+                    padding-right: 10px;
+                }
+            }
+
+            .user-city {
+                font-size: 0.9em;
+            }
+        }
+
+        .user-favorite {
+            padding: 10px;
+
+            img {
+                width: 8vw;
+            }
         }
     }
+}
 
-    .user-favorite {
-        padding: 10px;
 
-        img {
-            width: 8vw;
+
+
+.favorite-list-container {
+    display: flex;
+    flex-direction: column;
+    height: 22vh;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+
+    .headline {
+        background-color: rgb(239, 239, 244);
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        padding-left: 2vw;
+    }
+
+    .favorite-user-container {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+
+        .favorite-user {
+            display: flex;
+            flex-direction: column;
+            margin-right: 5vw;
+            align-items: center;
+
+
+            img {
+                width: 15vw;
+                height: 15vw;
+                border-radius: 45vw;
+                padding: 10px;
+            }
+
+            span {
+                text-transform: capitalize;
+            }
         }
     }
 }

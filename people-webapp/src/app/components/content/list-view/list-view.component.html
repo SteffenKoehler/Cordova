@@ -1,22 +1,39 @@
-<div class="list-container"  *ngFor="let user of randomUserList, let idx = index" (click)="goToUserDetails(idx)">
-    <div class="user-thumbnail">
-        <img [src]="user.picture.large" />
-    </div>
+<div class="main-list">
+    <div class="list-container"  *ngFor="let user of randomUserList, let idx = index" (click)="goToUserDetails(idx)">
+        <div class="user-thumbnail">
+            <img [src]="user.picture.large" />
+        </div>
 
-    <div class="user-details">
-        <div class="user-name">
-            <div>
-                {{user.name.first}}
-            </div>
+        <div class="user-details">
+            <div class="user-name">
+                <div>
+                    {{user.name.first}}
+                </div>
 
-            <div>
-                {{user.name.last}}
+                <div>
+                    {{user.name.last}}
+                </div>
             </div>
         </div>
+
+        <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
+            <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
+        </div>
+    </div>
+</div>
+
+
+<div class="favorite-list-container">
+    <div class="headline">
+        Favoriten
     </div>
 
-    <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
-        <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
+    <div class="favorite-user-container">
+        <div class="favorite-user" *ngFor="let favorite of favoriteUserList; let idx = index">
+            <img [src]="favorite.picture.large" />
+
+            <span>{{favorite.name.first}}</span>
+        </div>
     </div>
 </div>
 
