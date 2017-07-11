@@ -15,6 +15,7 @@ import { UserDetailsComponent } from './components/content/list-view/user-detail
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserData } from './providers/userData/userData';
 import { RandomUserListData } from './providers/randomUserListData/randomUserListData';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -33,7 +34,10 @@ import { RandomUserListData } from './providers/randomUserListData/randomUserLis
   imports: [
       AppRoutingModule,
       BrowserModule,
-      HttpModule
+      HttpModule,
+      AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyBmFXMsCQBAbkDOGtKN2-v_tJUn8mNnIcg'
+      })
   ],
   providers: [
       { provide: LocationStrategy, useClass: HashLocationStrategy },

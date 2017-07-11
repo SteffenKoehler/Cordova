@@ -1,3 +1,8 @@
 <div>
-  map works!
+    <agm-map [latitude]="lat" [longitude]="lng" (mapReady)="getMapReferenze($event)">
+        <agm-marker *ngFor="let mar of markers" [latitude]="mar.lat" [longitude]="mar.lng">
+            {{mar.lat}}
+        </agm-marker>
+    </agm-map>
 </div>
+
