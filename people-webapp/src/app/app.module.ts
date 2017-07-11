@@ -12,7 +12,6 @@ import { MapComponent } from './components/content/map/map.component';
 import { NavigationService } from './providers/navigation/navigation.service';
 import { SettingsComponent } from './components/content/settings/settings.component';
 import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserData } from './providers/userData/userData';
 import { RandomUserListData } from './providers/randomUserListData/randomUserListData';
 import { AgmCoreModule } from '@agm/core';
@@ -40,7 +39,6 @@ import { AgmCoreModule } from '@agm/core';
       })
   ],
   providers: [
-      { provide: LocationStrategy, useClass: HashLocationStrategy },
       NavigationService,
       UserData,
       RandomUserListData
