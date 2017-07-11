@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationService } from '../../shared/navigation/navigation.service';
+import { NavigationService } from '../../providers/navigation/navigation.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

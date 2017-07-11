@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
 import { ListViewComponent } from './components/content/list-view/list-view.component';
 import { MapComponent } from './components/content/map/map.component';
-import { NavigationService } from './shared/navigation/navigation.service';
+import { NavigationService } from './providers/navigation/navigation.service';
 import { SettingsComponent } from './components/content/settings/settings.component';
 import { UserDetailsComponent } from './components/content/list-view/user-details/user-details.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';

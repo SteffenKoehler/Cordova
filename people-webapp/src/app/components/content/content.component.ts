@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
-import {NavigationService} from '../../shared/navigation/navigation.service';
+import {NavigationService} from '../../providers/navigation/navigation.service';
 
 @Component({
     selector: 'app-content',
