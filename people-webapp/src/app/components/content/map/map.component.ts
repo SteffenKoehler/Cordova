@@ -10,7 +10,7 @@ export class MapComponent implements OnInit {
     lat: number = 49.398750;
     lng: number = 8.672434;
     markers: any = [];
-    private agmMap: any
+    private agmMap: any;
 
     constructor(
     ) { }
