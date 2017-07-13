@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { UserData } from '../../../providers/userData/userData';
 import { RandomUserListData } from '../../../providers/randomUserListData/randomUserListData';
 import { forEach } from '@angular/router/src/utils/collection';
+import { NumberOfUsers } from '../../../providers/numberOfUsers/numberOfUsers';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -20,23 +22,29 @@ export class ListViewComponent implements OnInit {
     listLoaded: boolean;
     randomUserList: Array<Randomuser> = [];
     favoriteUserList: Array<Randomuser> = [];
+    subscription: Subscription;
 
     constructor(
     private randomUserService: RandomuserService,
     private router: Router,
     private userStorage: UserData,
     private randomUserListStorage: RandomUserListData,
+    private numberOfUsers: NumberOfUsers
     ) {}
 
     ngOnInit() {
-        this.getUserList();
+        this.subscription = this.numberOfUsers.usersNumber
+            .subscribe(
+                item => this.getUserList(item),
+                error => console.log(error)
+            )
     }
 
-    getUserList () {
+    getUserList (numberOfUsers) {
         this.randomUserList = [];
         this.favoriteUserList = [];
 
-        if (this.randomUserListStorage.storage && this.randomUserListStorage.storage.length > 0) {
+        if (this.randomUserListStorage.storage && this.randomUserListStorage.storage.length > 0 && this.randomUserListStorage.storage.length === Number(numberOfUsers)) {
             const list = this.randomUserListStorage.storage;
             list.forEach((randomUser) => {
                 this.fillArrays(randomUser);
@@ -45,7 +53,7 @@ export class ListViewComponent implements OnInit {
             this.isLoading = true;
             this.listLoaded = false;
 
-            this.randomUserService.getUsers('de')
+            this.randomUserService.getUsers('de', numberOfUsers)
                 .subscribe(loadedRandomusers => {
                     loadedRandomusers.forEach((randomUser) => {
                         this.fillArrays(randomUser);

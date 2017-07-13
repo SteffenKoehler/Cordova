@@ -1,19 +1,19 @@
 /**
- * Created by steffen.koehler on 05.07.17.
+ * Created by steffen.koehler on 13.07.17.
  */
 
 import {Injectable} from '@angular/core'
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
-export class NavigationService {
+export class NumberOfUsers {
     // Observable navItem source
-    private _navItemSource = new BehaviorSubject<number>(3);
+    private _numberOfUsers = new BehaviorSubject<number>(50);
     // Observable navItem stream
-    navItem = this._navItemSource.asObservable();
+    usersNumber = this._numberOfUsers.asObservable();
     // service command
-    changeNav(number) {
+    changeNumber(number) {
         console.log('NavigationService number changed', number);
-        this._navItemSource.next(number);
+        this._numberOfUsers.next(number);
     }
 }

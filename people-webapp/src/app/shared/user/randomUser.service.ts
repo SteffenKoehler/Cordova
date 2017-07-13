@@ -8,23 +8,24 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {Randomuser} from './randomUser';
 import { RandomUserListData } from '../../providers/randomUserListData/randomUserListData';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Injectable()
 export class RandomuserService {
-    numberOfResults: number = 50;
     randomUserList: any = [];
+    subscription: Subscription;
 
     constructor(
         private http: Http,
         private randomUserListStorage: RandomUserListData
     ) {}
 
-    getUsers(nationalitie) {
+    getUsers(nationalitie, number) {
         const headers = new Headers();
         let url = 'https://randomuser.me/api/';
 
-        url = url + '?results=' + this.numberOfResults + '&nat=' + nationalitie;
+        url = url + '?results=' + number + '&nat=' + nationalitie;
 
         return this.http.get(url, {
         })
