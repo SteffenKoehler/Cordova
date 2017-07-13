@@ -3,9 +3,9 @@ import { NavigationService } from '../../providers/navigation/navigation.service
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss']
+    selector: 'app-tab-view',
+    templateUrl: './tab-view.component.html',
+    styleUrls: ['./tab-view.component.scss']
 })
 export class FooterComponent implements OnInit {
     selectedView: number;

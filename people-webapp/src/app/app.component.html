@@ -1,6 +1,6 @@
 <div class="app-wrapper">
     <app-action-bar [currentRoute]="currentRoute"></app-action-bar>
     <router-outlet></router-outlet>
-    <app-footer *ngIf="currentRoute === '/content'"></app-footer>
+    <app-tab-view *ngIf="currentRoute === '/content'"></app-tab-view>
 </div>
 
