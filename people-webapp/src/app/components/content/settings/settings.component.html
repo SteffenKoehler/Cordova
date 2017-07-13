@@ -1,3 +1,15 @@
-<p>
-  settings works!
-</p>
+<div class="settings-wrapper">
+
+    <div class="labels">
+        <span>0</span>
+    </div>
+
+    <div class="slider">
+        <input #ref title="slider" min="0" max="1000" type="range" step="1" value="15" (change)="onInputChanged(ref.value)" />
+    </div>
+
+    <div class="labels">
+        <span>1000</span>
+    </div>
+
+</div>
