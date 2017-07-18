@@ -1,7 +1,7 @@
 <div class="main-list">
-    <div class="list-container"  *ngFor="let user of randomUserList, let idx = index" (click)="goToUserDetails(idx)">
+    <div class="list-container"  *ngFor="let user of randomUserList, let idx = index" [ngClass]="{last: 'no-border-bottom' }" (click)="goToUserDetails(idx)">
         <div class="user-thumbnail">
-            <img [src]="user.picture.large" />
+            <div>{{user.initials}}</div>
         </div>
 
         <div class="user-details">
@@ -14,16 +14,23 @@
                     {{user.name.last}}
                 </div>
             </div>
+
+            <div class="user-city">
+                <div class="empty"></div>
+                <div class="city">
+                    {{user.location.city}}
+                </div>
+            </div>
         </div>
 
         <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
-            <img [src]="user.favorite ? './assets/images/heart_filled.svg' : './assets/images/heart_empty.svg'" />
+            <img [src]="user.favorite ? './assets/images/heart2_filled.svg' : './assets/images/heart2_empty.svg'" />
         </div>
     </div>
 </div>
 
 
-<div class="favorite-list-container">
+<!--<div class="favorite-list-container">
     <div class="headline">
         Favoriten ({{favoriteUserList.length}})
     </div>
@@ -35,5 +42,5 @@
             <span>{{favorite.name.first}}</span>
         </div>
     </div>
-</div>
+</div>-->
 

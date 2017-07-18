@@ -56,6 +56,7 @@ export class ListViewComponent implements OnInit {
             this.randomUserService.getUsers('de', numberOfUsers)
                 .subscribe(loadedRandomusers => {
                     loadedRandomusers.forEach((randomUser) => {
+                        randomUser.initials = randomUser.name.first.charAt(0).toLocaleUpperCase() + randomUser.name.last.charAt(0).toLocaleUpperCase();
                         this.fillArrays(randomUser);
                     });
                     this.isLoading = false;
