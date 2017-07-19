@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserData } from '../../../../providers/userData/userData';
 import { Randomuser } from '../../../../shared/user/randomUser';
 import { RandomuserService } from '../../../../shared/user/randomUser.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { NavigationService } from '../../../../providers/navigation/navigation.service';
 
 @Component({
   selector: 'app-user-details',
@@ -9,12 +12,20 @@ import { RandomuserService } from '../../../../shared/user/randomUser.service';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
+    @Input() currentRoute: string;
     user: Randomuser;
 
     constructor(
       private userStorage: UserData,
-      private randomUserService: RandomuserService
-    ) { }
+      private randomUserService: RandomuserService,
+      private router: Router,
+      private location: Location,
+      private navigationService: NavigationService
+    ) {
+        router.events.subscribe((val) => {
+            this.currentRoute = location.path();
+        });
+    }
 
     ngOnInit() {
         this.user = this.userStorage.storage;
@@ -26,6 +37,13 @@ export class UserDetailsComponent implements OnInit {
                         this.user = randomUser;
                     });
                 });
+        }
+    }
+
+    backClicked() {
+        if (this.currentRoute === '/userDetails') {
+            this.navigationService.changeNav(2);
+            this.location.back();
         }
     }
 
