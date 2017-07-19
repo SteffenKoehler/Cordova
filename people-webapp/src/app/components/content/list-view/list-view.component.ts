@@ -14,8 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
-  styleUrls: ['./list-view.component.scss'],
-  providers: [RandomuserService]
+  styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent implements OnInit {
     isLoading: boolean;
