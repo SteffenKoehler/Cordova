@@ -53,7 +53,18 @@ export class RandomuserService {
 
               const favorite = location.city.length > 8;
 
-              this.randomUserList.push(new Randomuser(randomUser.gender, name, picture, location, randomUser.email, randomUser.cell, favorite));
+              this.randomUserList.push(
+                  new Randomuser(
+                      randomUser.gender,
+                      name,
+                      picture,
+                      location,
+                      randomUser.email,
+                      randomUser.cell,
+                      favorite
+                  )
+              );
+
             });
             this.randomUserListStorage.storage = this.randomUserList;
             return this.randomUserList;

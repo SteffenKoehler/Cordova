@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 import { Randomuser } from '../../../shared/user/randomUser';
@@ -17,6 +17,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent implements OnInit {
+    @Input() selectedView: string;
     isLoading: boolean;
     listLoaded: boolean;
     randomUserList: Array<Randomuser> = [];
@@ -74,12 +75,12 @@ export class ListViewComponent implements OnInit {
 
     goToUserDetails (index): void {
         this.userStorage.storage = this.randomUserList[index];
-        this.router.navigate(['userDetails']);
+        this.router.navigate(['userDetails'], {queryParams: {fromFavorite: false}});
     }
 
     onFavUserClick (index): void {
         this.userStorage.storage = this.favoriteUserList[index];
-        this.router.navigate(['userDetails']);
+        this.router.navigate(['userDetails'], {queryParams: {fromFavorite: true}});
     }
 
     onUserHeartClicked (event, index): void {

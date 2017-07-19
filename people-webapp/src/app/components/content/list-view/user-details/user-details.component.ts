@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { UserData } from '../../../../providers/userData/userData';
 import { Randomuser } from '../../../../shared/user/randomUser';
 import { RandomuserService } from '../../../../shared/user/randomUser.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../../../providers/navigation/navigation.service';
 
@@ -14,21 +14,29 @@ import { NavigationService } from '../../../../providers/navigation/navigation.s
 export class UserDetailsComponent implements OnInit {
     @Input() currentRoute: string;
     user: Randomuser;
+    fromFavList: string;
 
     constructor(
       private userStorage: UserData,
       private randomUserService: RandomuserService,
       private router: Router,
       private location: Location,
-      private navigationService: NavigationService
+      private navigationService: NavigationService,
+      private activeRoute: ActivatedRoute
     ) {
         router.events.subscribe((val) => {
-            this.currentRoute = location.path();
+            this.currentRoute = location.path().substr(0, location.path().indexOf('?'));
         });
     }
 
     ngOnInit() {
         this.user = this.userStorage.storage;
+
+        this.activeRoute
+            .queryParams
+            .subscribe(params => {
+                this.fromFavList = params['fromFavorite'];
+            });
 
         if (!this.user) {
             this.randomUserService.getUsers('de', 1)
@@ -42,7 +50,11 @@ export class UserDetailsComponent implements OnInit {
 
     backClicked() {
         if (this.currentRoute === '/userDetails') {
-            this.navigationService.changeNav(2);
+            if (this.fromFavList === 'true' ) {
+                this.navigationService.changeNav(1);
+            } else {
+                this.navigationService.changeNav(2);
+            }
             this.location.back();
         }
     }
