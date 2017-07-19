@@ -2,18 +2,32 @@
     <div (click)="selectedNavItem(1)">
         <img [src]="srcHeartIcon" />
 
-
+        <div class="label" *ngIf="selectedView === 1">
+            Favoriten
+        </div>
     </div>
 
     <div (click)="selectedNavItem(2)">
         <img [src]="srcPeopleIcon" />
+
+        <div class="label" *ngIf="selectedView === 2">
+            Kontakte
+        </div>
     </div>
 
     <div (click)="selectedNavItem(3)">
         <img [src]="srcWorldIcon" />
+
+        <div class="label" *ngIf="selectedView === 3">
+            Karte
+        </div>
     </div>
 
     <div (click)="selectedNavItem(4)">
         <img [src]="srcSettingsIcon" />
+
+        <div class="label" *ngIf="selectedView === 4">
+            Einstellungen
+        </div>
     </div>
 </div>

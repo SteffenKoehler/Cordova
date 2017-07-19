@@ -2,21 +2,39 @@
     flex: 0 0 auto;
     background-color: rgb(165, 224, 218);
     margin: 20px;
+    height: 96px;
 }
 
 .footer-wrapper {
     display: flex;
+    padding: 10px;
+    height: calc(100% - 34px);
 
     > div {
+        position: relative;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         flex: 1;
-        padding: 20px;
-        border-bottom: 2px solid #7FD3CB;
+        border-bottom: 1px solid #7FD3CB;
+        border-right: 1px solid #7FD3CB;
+
+        &:nth-last-child(1) {
+            border-right: none;
+        }
 
         img {
             height: 40px;
             width: 40px;
+        }
+
+        .label {
+            color: #69C3BB;
+            font-size: 12px;
+            padding-top: 10px;
+            position: absolute;
+            bottom: -20px;
         }
     }
 }
