@@ -5,40 +5,45 @@
 }
 
 .user-details-wrapper {
+    margin: 20px;
+    background-color: rgb(165, 224, 218);
 
     .head {
+        img {
+            height: 35vh;
+            width: 100%;
+            opacity: 0.4;
+            -webkit-filter: grayscale(80%); /* Google Chrome, Safari 6+ & Opera 15+ */
+            filter: grayscale(80%); /* Microsoft Edge and Firefox 35+ */
+        }
+
+    }
+
+    .user-information {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 50vh;
-        background-color: rgb(248,197,112);
-        color: white;
+        margin-bottom: 40px;
 
         img {
-            border: 2px solid white;
+            border: 2px solid #69C3BB;
             border-radius: 200px;
             height: 18vh;
+            margin-top: -15vh;
+            z-index: 1;
         }
 
-        .user-name {
-            margin-top: 20px;
-            text-transform: capitalize;
-            font-size: 1.5em;
-        }
-
-        .user-information {
-            font-size: 0.8em;
-            margin-top: 5px;
-        }
-
-        .add-reaction-button {
-            background-color: white;
-            color: rgb(248,197,112);
+        .name {
             margin-top: 30px;
-            padding: 10px 50px;
-            border-radius: 30px;
-            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: white;
+            text-transform: capitalize;
+            font-size: 3vh;
+        }
+
+        .information {
+            color: #578C87;
+            font-size: 14px;
         }
     }
 
@@ -46,8 +51,10 @@
         display: flex;
         flex-direction: column;
         margin-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+
+        .backgroundcolor {
+            background-color: rgb(178, 228, 223);
+        }
 
         hr {
             display: block;
@@ -63,8 +70,12 @@
             align-items: center;
 
             img {
-                height: 5vh;
+                width: 24px;
                 padding-right: 20px;
+            }
+
+            span {
+                color: #578C87;
             }
         }
     }

@@ -2,27 +2,26 @@
 
 
     <div class="head">
-        <div>
-            <img [src]="user.picture.large">
+        <img [src]="user.picture.large" />
+    </div>
+
+    <div class="user-information">
+        <img [src]="user.picture.large">
+
+        <div class="name">
+            {{user.name.first}} {{user.name.last}}
         </div>
 
-        <div class="user-name">
-            <span>{{user.name.first}}</span> <span>{{user.name.last}}</span>
+        <div class="information">
+            Seit 9 Monaten und 6 Tagen in Spanien
         </div>
 
-        <div class="user-information">
-            <span>Seit einer Woche und drei Tagen in England.</span>
-        </div>
-
-        <div class="add-reaction-button">
-            <span>add reaction</span>
-        </div>
     </div>
 
     <div class="body">
-        <div>
+        <div class="backgroundcolor">
             <div>
-                <img src="./assets/images/map2.svg">
+                <img src="./assets/images/new/user-details/world.svg">
             </div>
 
             <div>
@@ -34,7 +33,7 @@
 
         <div>
             <div>
-                <img src="./assets/images/phone.svg">
+                <img src="./assets/images/new/user-details/phone.svg">
             </div>
 
             <div>
@@ -44,9 +43,9 @@
 
         <hr>
 
-        <div>
+        <div class="backgroundcolor">
             <div>
-                <img src="./assets/images/world.svg">
+                <img src="./assets/images/new/user-details/mail.svg">
             </div>
 
             <div>

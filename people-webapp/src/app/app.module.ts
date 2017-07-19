@@ -16,6 +16,7 @@ import { UserData } from './providers/userData/userData';
 import { RandomUserListData } from './providers/randomUserListData/randomUserListData';
 import { AgmCoreModule } from '@agm/core';
 import { NumberOfUsers } from './providers/numberOfUsers/numberOfUsers';
+import { RandomuserService } from './shared/user/randomUser.service';
 
 
 
@@ -43,7 +44,8 @@ import { NumberOfUsers } from './providers/numberOfUsers/numberOfUsers';
       NavigationService,
       UserData,
       RandomUserListData,
-      NumberOfUsers
+      NumberOfUsers,
+      RandomuserService
   ],
   bootstrap: [AppComponent]
 })
