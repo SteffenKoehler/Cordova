@@ -19,7 +19,10 @@ export class FooterComponent implements OnInit {
     ngOnInit() {
         this.subscription = this._navigationService.navItem
             .subscribe(
-                item => this.selectedView = item,
+                item => {
+                    this.selectedView = item;
+                    this.setSrcForIcons();
+                },
                 error => console.log('Subscription error', error)
             );
         this.setSrcForIcons();
