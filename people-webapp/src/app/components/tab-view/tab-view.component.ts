@@ -9,8 +9,9 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class FooterComponent implements OnInit {
     selectedView: number;
-    srcMapIcon: string;
-    srcListIcon: string;
+    srcHeartIcon: string;
+    srcPeopleIcon: string;
+    srcWorldIcon: string;
     srcSettingsIcon: string;
     subscription: Subscription;
     constructor(private _navigationService: NavigationService) { }
@@ -32,19 +33,23 @@ export class FooterComponent implements OnInit {
     }
 
     setSrcForIcons() {
-        this.srcMapIcon = './assets/images/map.svg';
-        this.srcListIcon = './assets/images/contact.svg';
-        this.srcSettingsIcon = './assets/images/setting.svg';
+        this.srcHeartIcon = './assets/images/new/actionbar/heart_empty.svg';
+        this.srcPeopleIcon = './assets/images/new/actionbar/people_empty.svg';
+        this.srcWorldIcon = './assets/images/new/actionbar/world_empty.svg';
+        this.srcSettingsIcon = './assets/images/new/actionbar/settings_empty.svg';
 
         switch (this.selectedView) {
             case 1:
-                this.srcMapIcon = './assets/images/map_orange.svg';
+                this.srcHeartIcon = './assets/images/new/actionbar/heart_filled.svg';
                 break;
             case 2:
-                this.srcListIcon = './assets/images/contact_orange.svg';
+                this.srcPeopleIcon = './assets/images/new/actionbar/people_filled.svg';
                 break;
             case 3:
-                this.srcSettingsIcon = './assets/images/setting_orange.svg';
+                this.srcWorldIcon = './assets/images/new/actionbar/world_filled.svg';
+                break;
+            case 4:
+                this.srcSettingsIcon = './assets/images/new/actionbar/settings_filled.svg';
                 break;
         }
     }
