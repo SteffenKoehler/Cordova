@@ -17,7 +17,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent implements OnInit {
-    @Input() selectedView: string;
+    @Input() selectedView: number;
     isLoading: boolean;
     listLoaded: boolean;
     randomUserList: Array<Randomuser> = [];
