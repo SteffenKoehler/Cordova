@@ -34,5 +34,23 @@
 
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        
+        <splash src="res/ios/splash/Default~iphone.png" width="320" height="480" />
+        <splash src="res/ios/splash/Default~ipad.png" width="375" height="667" />
+        <splash src="res/ios/splash/Default@2x~iphone_640x960.png" width="640" height="960" />
+        <splash src="res/ios/splash/Default.png" width="375" height="667" />
+        <splash src="res/ios/splash/Default-Portrait~ipad_768x1024.png" width="768" height="1024" />
+        <splash src="res/ios/splash/Default-Portrait@2x~ipad_1536x2048.png" width="1536" height="2048" />
+        <splash src="res/ios/splash/Default-Portrait@2x~ipad_1536x2008.png" width="1536" height="2008" />
+        <splash src="res/ios/splash/Default-Landscape~ipad_1024x768.png" width="1024" height="768" />
+        <splash src="res/ios/splash/Default-Landscape~ipad_1024x748.png" width="1024" height="748" />
+        <splash src="res/ios/splash/Default-Landscape@2x~ipad_2048x1536.png" width="2048" height="1536" />
+        <splash src="res/ios/splash/Default-Landscape@2x~ipad_2048x1496.png" width="2048" height="1496" />
+        <splash src="res/ios/splash/Default-1242@3x~iphone6s-portrait_1242x2208.png" width="1242" height="2208" />
+        <splash src="res/ios/splash/Default-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" height="1242" />
+        <splash src="res/ios/splash/Default-750@2x~iphone6-portrait_750x1334.png" width="750" height="1334" />
+        <splash src="res/ios/splash/Default-750@2x~iphone6-landscape_1334x750.png" width="1334" height="750" />
+        <splash src="res/ios/splash/Default-568h@2x~iphone_640x1136.png" width="640" height="1136" />
+        
     </platform>
 </widget>
