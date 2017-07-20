@@ -1,61 +1,32 @@
-<div class="main-list" *ngIf="selectedView === 1">
-    <div class="list-container"  *ngFor="let user of favoriteUserList, let idx = index" [ngClass]="{last: 'no-border-bottom' }" (click)="onFavUserClick(idx)">
-        <div class="user-thumbnail">
-            <div>{{user.initials}}</div>
-        </div>
+<div class="main-list">
+    <ng-container *ngFor="let user of randomUserList, let idx = index">
+        <div class="list-container" *ngIf="selectedView === 1 && user.favorite || selectedView === 2"  [ngClass]="{last: 'no-border-bottom' }" (click)="onFavUserClick(idx)">
+            <div class="user-thumbnail">
+                <div>{{user.initials}}</div>
+            </div>
 
-        <div class="user-details">
-            <div class="user-name">
-                <div>
-                    {{user.name.first}}
+            <div class="user-details">
+                <div class="user-name">
+                    <div>
+                        {{user.name.first}}
+                    </div>
+
+                    <div>
+                        {{user.name.last}}
+                    </div>
                 </div>
 
-                <div>
-                    {{user.name.last}}
+                <div class="user-city">
+                    <div class="empty"></div>
+                    <div class="city">
+                        {{user.location.city}}
+                    </div>
                 </div>
             </div>
 
-            <div class="user-city">
-                <div class="empty"></div>
-                <div class="city">
-                    {{user.location.city}}
-                </div>
+            <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
+                <img [src]="user.favorite ? './assets/images/heart2_filled.svg' : './assets/images/heart2_empty.svg'" />
             </div>
         </div>
-
-        <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
-            <img [src]="user.favorite ? './assets/images/heart2_filled.svg' : './assets/images/heart2_empty.svg'" />
-        </div>
-    </div>
-</div>
-
-<div class="main-list" *ngIf="selectedView === 2">
-    <div class="list-container"  *ngFor="let user of randomUserList, let idx = index" [ngClass]="{last: 'no-border-bottom' }" (click)="goToUserDetails(idx)">
-        <div class="user-thumbnail">
-            <div>{{user.initials}}</div>
-        </div>
-
-        <div class="user-details">
-            <div class="user-name">
-                <div>
-                    {{user.name.first}}
-                </div>
-
-                <div>
-                    {{user.name.last}}
-                </div>
-            </div>
-
-            <div class="user-city">
-                <div class="empty"></div>
-                <div class="city">
-                    {{user.location.city}}
-                </div>
-            </div>
-        </div>
-
-        <div class="user-favorite" (click)="onUserHeartClicked($event,idx)">
-            <img [src]="user.favorite ? './assets/images/heart2_filled.svg' : './assets/images/heart2_empty.svg'" />
-        </div>
-    </div>
+    </ng-container>
 </div>
