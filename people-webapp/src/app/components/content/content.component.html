@@ -1,6 +1,6 @@
 <div class="content-wrapper">
 
-    <app-list-view *ngIf="selectedView === 1 || 2" [selectedView]="selectedView"></app-list-view>
+    <app-list-view *ngIf="selectedView === 1 || selectedView === 2" [selectedView]="selectedView"></app-list-view>
     <app-map *ngIf="selectedView === 3"></app-map>
     <app-settings *ngIf="selectedView === 4"></app-settings>
 </div>
