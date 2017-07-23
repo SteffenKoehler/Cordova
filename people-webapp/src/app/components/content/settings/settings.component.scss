@@ -1,104 +1,141 @@
 .settings-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: rgb(165, 224, 218);
+    color: #578C87;
 
-
-    .labels {
-        flex: 0;
-        margin-left: 10px;
-        margin-right: 10px;
+    >div {
+        padding: 20px;
     }
 
-    .slider {
-        flex: 1;
+    .light-background {
+        background-color: rgb(177, 227, 223);
+    }
 
-        input[type=range] {
-            /*removes default webkit styles*/
-            -webkit-appearance: none;
+    .text-white {
+        color: #FFFFFF;
+    }
 
-            /*fix for FF unable to apply focus style bug */
-            border: 1px solid lightgray;
+    .checkbox-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+    .slider-wrapper {
+        display: flex;
+        padding-top: 30px;
+        height: 80px;
+
+        .labels {
+            flex: 0;
+
+            .left {
+                margin-right: 10px;
+            }
+
+            .right {
+                margin-left: 10px;
+            }
+        }
+
+        .slider {
             flex: 1;
-            width: 100%;
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            height: 5px;
-            background: #ddd;
-            border: none;
-            border-radius: 3px;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: 1px solid lightgray;
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            background: white;
-            margin-top: -9px;
-        }
-        input[type=range]:focus {
-            outline: none;
-        }
-        input[type=range]:focus::-webkit-slider-runnable-track {
-            background: #ccc;
-        }
 
-        input[type=range]::-moz-range-track {
-            height: 5px;
-            background: #ddd;
-            border: 1px solid lightgray;
-            border-radius: 3px;
-        }
-        input[type=range]::-moz-range-thumb {
-            border: 1px solid lightgray;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: goldenrod;
-        }
+            input[type=range] {
+                /*removes default webkit styles*/
+                -webkit-appearance: none;
 
-        /*hide the outline behind the border*/
-        input[type=range]:-moz-focusring{
-            outline: 1px solid white;
-            outline-offset: -1px;
-        }
+                /*fix for FF unable to apply focus style bug */
+                border: 1px solid lightgray;
+                flex: 1;
+                width: 100%;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                height: 5px;
+                background: #ddd;
+                border: none;
+                border-radius: 3px;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: 1px solid lightgray;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: white;
+                margin-top: -9px;
+            }
+            input[type=range]:focus {
+                outline: none;
+            }
+            input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #ccc;
+            }
 
-        input[type=range]::-ms-track {
-            height: 5px;
+            input[type=range]::-moz-range-track {
+                height: 5px;
+                background: #ddd;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+            input[type=range]::-moz-range-thumb {
+                border: 1px solid lightgray;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: goldenrod;
+            }
 
-            /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-            background: transparent;
+            /*hide the outline behind the border*/
+            input[type=range]:-moz-focusring{
+                outline: 1px solid white;
+                outline-offset: -1px;
+            }
 
-            /*leave room for the larger thumb to overflow with a transparent border */
-            border-color: transparent;
-            border-width: 6px 0;
+            input[type=range]::-ms-track {
+                height: 5px;
 
-            /*remove default tick marks*/
-            color: transparent;
-        }
-        input[type=range]::-ms-fill-lower {
-            background: #777;
-            border-radius: 10px;
-        }
-        input[type=range]::-ms-fill-upper {
-            background: #ddd;
-            border-radius: 10px;
-        }
-        input[type=range]::-ms-thumb {
-            border: none;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: goldenrod;
-        }
-        input[type=range]:focus::-ms-fill-lower {
-            background: #888;
-        }
-        input[type=range]:focus::-ms-fill-upper {
-            background: #ccc;
+                /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+                background: transparent;
+
+                /*leave room for the larger thumb to overflow with a transparent border */
+                border-color: transparent;
+                border-width: 6px 0;
+
+                /*remove default tick marks*/
+                color: transparent;
+            }
+            input[type=range]::-ms-fill-lower {
+                background: #777;
+                border-radius: 10px;
+            }
+            input[type=range]::-ms-fill-upper {
+                background: #ddd;
+                border-radius: 10px;
+            }
+            input[type=range]::-ms-thumb {
+                border: none;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: goldenrod;
+            }
+            input[type=range]:focus::-ms-fill-lower {
+                background: #888;
+            }
+            input[type=range]:focus::-ms-fill-upper {
+                background: #ccc;
+            }
         }
     }
+
+
 
 }
 

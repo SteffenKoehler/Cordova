@@ -1,15 +1,49 @@
 <div class="settings-wrapper">
 
-    <div class="labels">
-        <span>0</span>
+    <div class="text-white">
+        <span>Allgemein</span>
     </div>
 
-    <div class="slider">
-        <input #ref title="slider" min="0" max="1000" type="range" step="1" [value]="value" (change)="onInputChanged(ref.value)" />
+    <div class="checkbox-wrapper light-background">
+        <div>Nachrichten</div>
+        <div>
+            <input title="nachrichten" type="checkbox" >
+        </div>
     </div>
 
-    <div class="labels">
-        <span>1000</span>
+    <div class="checkbox-wrapper">
+        <div>Fotos</div>
+        <div>
+            <input title="fotos" type="checkbox" >
+        </div>
     </div>
+
+    <div class="checkbox-wrapper light-background">
+        <div>Mobile Daten</div>
+        <div>
+            <input title="mobile-daten" type="checkbox" >
+        </div>
+    </div>
+
+    <div class="text-white">
+        <span>Anzahl Listenelemente</span>
+    </div>
+
+
+    <div class="slider-wrapper light-background">
+        <div class="labels">
+            <span class="left">0</span>
+        </div>
+
+        <div class="slider">
+            <input #ref title="slider" min="0" max="1000" type="range" step="1" [value]="value" (change)="onInputChanged(ref.value)" />
+        </div>
+
+        <div class="labels">
+            <span class="right">1000</span>
+        </div>
+    </div>
+
+
 
 </div>
