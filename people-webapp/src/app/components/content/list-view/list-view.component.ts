@@ -75,12 +75,8 @@ export class ListViewComponent implements OnInit {
 
     goToUserDetails (index): void {
         this.userStorage.storage = this.randomUserList[index];
-        this.router.navigate(['userDetails'], {queryParams: {fromFavorite: false}});
-    }
-
-    onFavUserClick (index): void {
-        this.userStorage.storage = this.favoriteUserList[index];
-        this.router.navigate(['userDetails'], {queryParams: {fromFavorite: true}});
+        const fromFavorite = this.selectedView === 1;
+        this.router.navigate(['userDetails'], {queryParams: {fromFavorite: fromFavorite}});
     }
 
     onUserHeartClicked (event, index): void {

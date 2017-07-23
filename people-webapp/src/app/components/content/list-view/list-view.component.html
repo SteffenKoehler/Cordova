@@ -1,6 +1,6 @@
 <div class="main-list">
     <ng-container *ngFor="let user of randomUserList, let idx = index">
-        <div class="list-container" *ngIf="selectedView === 1 && user.favorite || selectedView === 2"  [ngClass]="{last: 'no-border-bottom' }" (click)="onFavUserClick(idx)">
+        <div class="list-container" *ngIf="selectedView === 1 && user.favorite || selectedView === 2"  [ngClass]="{last: 'no-border-bottom' }" (click)="goToUserDetails(idx)">
             <div class="user-thumbnail">
                 <div>{{user.initials}}</div>
             </div>
