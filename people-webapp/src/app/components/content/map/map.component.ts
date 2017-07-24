@@ -20,10 +20,21 @@ export class MapComponent implements OnInit {
         const mapElement = <HTMLElement>document.getElementsByTagName('agm-map')[0];
         mapElement.setAttribute('style', 'height: ' + appContent.clientHeight + 'px');
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 50; i++) {
             const newMarker = {
-                lat: this.lat + Math.random() ,
-                lng: this.lng + Math.random(),
+                lat: this.lat + 2 * Math.random(),
+                lng: this.lng + 2 * Math.random(),
+                iconUrl: './assets/images/new/positionpoint.png'
+            };
+
+            this.markers.push(newMarker);
+        }
+
+        for (let i = 0; i < 50; i++) {
+            const newMarker = {
+                lat: this.lat - 2 * Math.random(),
+                lng: this.lng - 2 * Math.random(),
+                iconUrl: './assets/images/new/positionpoint.png'
             };
 
             this.markers.push(newMarker);
