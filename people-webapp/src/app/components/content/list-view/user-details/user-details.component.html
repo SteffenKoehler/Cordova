@@ -1,9 +1,9 @@
+
+<div class="back-button" (click)="backClicked()">
+    <img *ngIf="currentRoute === '/userDetails'" src="./assets/images/new/user-details/back.png">
+</div>
+
 <div class="user-details-wrapper">
-
-    <div class="back-button" (click)="backClicked()">
-        <img *ngIf="currentRoute === '/userDetails'" src="./assets/images/new/user-details/back.png">
-    </div>
-
 
     <div class="head">
         <img [src]="user.picture.large" />
