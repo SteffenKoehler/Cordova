@@ -31,11 +31,12 @@
         </feature>
 
         <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+        <preference name="target-device" value="universal"/>
 
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         
-        <splash src="res/ios/splash/Default~iphone.png" width="320" height="480" />
+       <!-- <splash src="res/ios/splash/Default~iphone.png" width="320" height="480" />
         <splash src="res/ios/splash/Default~ipad.png" width="375" height="667" />
         <splash src="res/ios/splash/Default@2x~iphone_640x960.png" width="640" height="960" />
         <splash src="res/ios/splash/Default.png" width="375" height="667" />
@@ -50,7 +51,7 @@
         <splash src="res/ios/splash/Default-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" height="1242" />
         <splash src="res/ios/splash/Default-750@2x~iphone6-portrait_750x1334.png" width="750" height="1334" />
         <splash src="res/ios/splash/Default-750@2x~iphone6-landscape_1334x750.png" width="1334" height="750" />
-        <splash src="res/ios/splash/Default-568h@2x~iphone_640x1136.png" width="640" height="1136" />
+        <splash src="res/ios/splash/Default-568h@2x~iphone_640x1136.png" width="640" height="1136" />-->
         
     </platform>
 </widget>
