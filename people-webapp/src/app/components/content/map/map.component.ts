@@ -18,7 +18,7 @@ export class MapComponent implements OnInit {
     ngOnInit() {
         const appContent = <HTMLElement>document.getElementsByTagName('app-content')[0];
         const mapElement = <HTMLElement>document.getElementsByTagName('agm-map')[0];
-        mapElement.setAttribute('style', 'height: ' + appContent.clientHeight + 'px');
+        mapElement.setAttribute('style', 'height: ' + (appContent.clientHeight - 20) + 'px');
 
         for (let i = 0; i < 50; i++) {
             const newMarker = {
