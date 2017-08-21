@@ -1,105 +1,157 @@
 .settings-wrapper {
     display: flex;
-    justify-content: space-between;
-    margin: 15px;
+    flex-direction: column;
+    background-color: #efeff4;
+    height: 100%;
 
-
-    .labels {
-        flex: 0;
-        margin-left: 10px;
-        margin-right: 10px;
+    .headline {
+        color: #6d6d72;
+        padding-top: 20px;
+        padding-left: 15px;
+        padding-bottom: 5px;
+        font-size: 13px;
     }
 
-    .slider {
-        flex: 1;
+    .switch-wrapper {
 
-        input[type=range] {
-            /*removes default webkit styles*/
-            -webkit-appearance: none;
+        display: flex;
+        flex-direction: column;
 
-            /*fix for FF unable to apply focus style bug */
-            border: 1px solid lightgray;
+        > div {
+            &:first-child {
+                border-top: 1px solid #c8c7cc;
+            }
+
+            span {
+                color: #030303;
+            }
+
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 15px;
+            border-bottom: 1px solid #c8c7cc;
+        }
+    }
+
+    .slider-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: white;
+        padding: 15px;
+
+        .rectangle-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .rectangle {
+                width: 14px;
+                height: 14px;
+                border-radius: 3px;
+                border: solid 1px #000000;
+                background-color: white;
+
+                &.behind {
+                    position: relative;
+                    top: -20px;
+                    left: 5px;
+                }
+            }
+        }
+
+
+
+        .slider {
             flex: 1;
-            width: 100%;
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            height: 5px;
-            background: #ddd;
-            border: none;
-            border-radius: 3px;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            border: 1px solid lightgray;
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            background: white;
-            margin-top: -9px;
-        }
-        input[type=range]:focus {
-            outline: none;
-        }
-        input[type=range]:focus::-webkit-slider-runnable-track {
-            background: #ccc;
-        }
 
-        input[type=range]::-moz-range-track {
-            height: 5px;
-            background: #ddd;
-            border: 1px solid lightgray;
-            border-radius: 3px;
-        }
-        input[type=range]::-moz-range-thumb {
-            border: 1px solid lightgray;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: goldenrod;
-        }
+            input[type=range] {
+                /*removes default webkit styles*/
+                -webkit-appearance: none;
 
-        /*hide the outline behind the border*/
-        input[type=range]:-moz-focusring{
-            outline: 1px solid white;
-            outline-offset: -1px;
-        }
+                /*fix for FF unable to apply focus style bug */
+                border: 1px solid lightgray;
+                flex: 1;
+                width: 100%;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                height: 5px;
+                background: #ddd;
+                border: none;
+                border-radius: 3px;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: 1px solid lightgray;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: white;
+                margin-top: -9px;
+            }
+            input[type=range]:focus {
+                outline: none;
+            }
+            input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #ccc;
+            }
 
-        input[type=range]::-ms-track {
-            height: 5px;
+            input[type=range]::-moz-range-track {
+                height: 5px;
+                background: #ddd;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+            input[type=range]::-moz-range-thumb {
+                border: 1px solid lightgray;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: goldenrod;
+            }
 
-            /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
-            background: transparent;
+            /*hide the outline behind the border*/
+            input[type=range]:-moz-focusring {
+                outline: 1px solid white;
+                outline-offset: -1px;
+            }
 
-            /*leave room for the larger thumb to overflow with a transparent border */
-            border-color: transparent;
-            border-width: 6px 0;
+            input[type=range]::-ms-track {
+                height: 5px;
 
-            /*remove default tick marks*/
-            color: transparent;
-        }
-        input[type=range]::-ms-fill-lower {
-            background: #777;
-            border-radius: 10px;
-        }
-        input[type=range]::-ms-fill-upper {
-            background: #ddd;
-            border-radius: 10px;
-        }
-        input[type=range]::-ms-thumb {
-            border: none;
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            background: goldenrod;
-        }
-        input[type=range]:focus::-ms-fill-lower {
-            background: #888;
-        }
-        input[type=range]:focus::-ms-fill-upper {
-            background: #ccc;
+                /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+                background: transparent;
+
+                /*leave room for the larger thumb to overflow with a transparent border */
+                border-color: transparent;
+                border-width: 6px 0;
+
+                /*remove default tick marks*/
+                color: transparent;
+            }
+            input[type=range]::-ms-fill-lower {
+                background: #777;
+                border-radius: 10px;
+            }
+            input[type=range]::-ms-fill-upper {
+                background: #ddd;
+                border-radius: 10px;
+            }
+            input[type=range]::-ms-thumb {
+                border: none;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: goldenrod;
+            }
+            input[type=range]:focus::-ms-fill-lower {
+                background: #888;
+            }
+            input[type=range]:focus::-ms-fill-upper {
+                background: #ccc;
+            }
         }
     }
-
 }
 
 

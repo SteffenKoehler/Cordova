@@ -1,15 +1,52 @@
 <div class="settings-wrapper">
 
-    <div class="labels">
-        <span>0</span>
+    <div class="headline">
+        <span>DATENQUELLE</span>
     </div>
 
-    <div class="slider">
-        <input #ref title="slider" min="0" max="1000" type="range" step="1" [value]="value" (change)="onInputChanged(ref.value)" />
+    <div class="switch-wrapper">
+        <div>
+            <span>Option 1</span>
+            <input type="checkbox">
+        </div>
+
+        <div>
+            <span>Option 2</span>
+            <input type="checkbox">
+        </div>
+
+        <div>
+            <span>Option 3</span>
+            <input type="checkbox">
+        </div>
     </div>
 
-    <div class="labels">
-        <span>1000</span>
+
+
+    <div class="headline">
+        <span>ELEMENTANZAHL</span>
     </div>
+
+
+
+    <div class="slider-wrapper">
+
+        <div class="rectangle-wrapper">
+            <div class="rectangle"></div>
+
+            <div>
+                <div class="rectangle"></div>
+                <div class="rectangle behind"></div>
+            </div>
+
+
+        </div>
+
+
+        <div class="slider">
+            <input #ref title="slider" min="0" max="1000" type="range" step="1" [value]="value" (change)="onInputChanged(ref.value)" />
+        </div>
+    </div>
+
 
 </div>
