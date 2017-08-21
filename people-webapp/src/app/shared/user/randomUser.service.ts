@@ -67,7 +67,7 @@ export class RandomuserService {
 
             });
 
-            for (let x = 0; x < 400; x++) {
+            for (let x = 0; x < 1; x++) {
                 for (let i = 0; i < 50; i++) {
                     this.randomUserList.push(this.randomUserList[i]);
                 }
